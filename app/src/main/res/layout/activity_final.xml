@@ -5,13 +5,12 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".FinalActivity">
+    tools:context=".FinalActivity"
+    android:background="#F5F5F5">
 
-
-    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#F5F5F5"
         android:padding="16dp">
 
         <LinearLayout
@@ -20,7 +19,6 @@
             android:orientation="vertical"
             android:gravity="center_horizontal">
 
-            <!-- Profile Image -->
             <ImageView
                 android:id="@+id/profileImageView"
                 android:layout_width="120dp"
@@ -33,7 +31,6 @@
                 android:clipToOutline="true"
                 android:contentDescription="Profile Picture"/>
 
-            <!-- Full Name -->
             <TextView
                 android:id="@+id/tvFullName"
                 android:layout_width="wrap_content"
@@ -44,7 +41,6 @@
                 android:text="Full Name"
                 android:layout_gravity="center"/>
 
-            <!-- Contact Info -->
             <TextView
                 android:id="@+id/tvContact"
                 android:layout_width="wrap_content"
@@ -54,25 +50,24 @@
                 android:text="Email | Phone"
                 android:layout_gravity="center"/>
 
-            <!-- CV Sections -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:layout_marginTop="12dp">
 
-                <!-- Summary -->
+                <!-- Summary Card -->
                 <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="10dp"
-                    app:cardCornerRadius="8dp"
-                    app:cardElevation="4dp">
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="6dp">
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:padding="12dp"
+                        android:padding="16dp"
                         android:orientation="vertical">
 
                         <TextView
@@ -92,19 +87,18 @@
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
-                <!-- Education -->
+                <!-- Education Card -->
                 <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="10dp"
-                    app:cardCornerRadius="8dp"
-                    app:cardElevation="4dp">
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="6dp">
 
-
-                <LinearLayout
+                    <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:padding="12dp"
+                        android:padding="16dp"
                         android:orientation="vertical">
 
                         <TextView
@@ -124,18 +118,18 @@
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
-                <!-- Experience -->
+                <!-- Experience Card -->
                 <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="10dp"
-                    app:cardCornerRadius="8dp"
-                    app:cardElevation="4dp">
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="6dp">
 
-                <LinearLayout
+                    <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:padding="12dp"
+                        android:padding="16dp"
                         android:orientation="vertical">
 
                         <TextView
@@ -155,19 +149,18 @@
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
-                <!-- Certifications -->
+                <!-- Certifications Card -->
                 <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="10dp"
-                    app:cardCornerRadius="8dp"
-                    app:cardElevation="4dp">
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="6dp">
 
-
-                <LinearLayout
+                    <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:padding="12dp"
+                        android:padding="16dp"
                         android:orientation="vertical">
 
                         <TextView
@@ -187,18 +180,18 @@
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
-                <!-- References -->
+                <!-- References Card -->
                 <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="10dp"
-                    app:cardCornerRadius="8dp"
-                    app:cardElevation="4dp">
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="6dp">
 
-                <LinearLayout
+                    <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:padding="12dp"
+                        android:padding="16dp"
                         android:orientation="vertical">
 
                         <TextView
@@ -217,10 +210,19 @@
                             android:textColor="#444444"/>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
+
             </LinearLayout>
+
+            <Button
+                android:id="@+id/btnShare"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Share CV"
+                android:textSize="16sp"
+                android:layout_marginTop="16dp"
+
+                android:padding="12dp"
+                android:layout_gravity="center"/>
         </LinearLayout>
     </ScrollView>
-
-
-
 </androidx.constraintlayout.widget.ConstraintLayout>

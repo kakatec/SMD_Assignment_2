@@ -1,8 +1,10 @@
 package com.example.a2;
 
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
@@ -38,6 +40,34 @@ public class FinalActivity extends AppCompatActivity {
         ((TextView) findViewById(R.id.tvExperience)).setText(data.getExperience());
         ((TextView) findViewById(R.id.tvCertifications)).setText(data.getCertifications());
         ((TextView) findViewById(R.id.tvReferences)).setText(data.getReferences());
+
+        // Share CV Button
+        Button btnShareCV = findViewById(R.id.btnShare);
+        btnShareCV.setOnClickListener(v -> shareCV());
+    }
+
+    // Method to Share CV
+    private void shareCV() {
+        CVData data = CVData.getInstance();
+
+        // Format CV Details
+        String cvText = "CV Details:\n\n"
+                + "Full Name: " + data.getFullName() + "\n"
+                + "Email: " + data.getEmail() + "\n"
+                + "Phone: " + data.getPhone() + "\n\n"
+                + "Summary:\n" + data.getSummary() + "\n\n"
+                + "Education:\n" + data.getEducation() + "\n\n"
+                + "Experience:\n" + data.getExperience() + "\n\n"
+                + "Certifications:\n" + data.getCertifications() + "\n\n"
+                + "References:\n" + data.getReferences();
+
+        // Implicit Intent to Share
+        Intent shareIntent = new Intent(Intent.ACTION_SEND);
+        shareIntent.setType("text/plain");
+        shareIntent.putExtra(Intent.EXTRA_SUBJECT, "My CV");
+        shareIntent.putExtra(Intent.EXTRA_TEXT, cvText);
+
+        startActivity(Intent.createChooser(shareIntent, "Share CV via"));
     }
 
     // Handle Back Button Click

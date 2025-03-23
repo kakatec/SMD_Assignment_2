@@ -15,24 +15,59 @@
         android:padding="16dp">
 
         <EditText
-            android:id="@+id/etExperience"
+            android:id="@+id/etJobTitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Enter experience"
-            android:inputType="textMultiLine"
-            android:minHeight="100dp"/>
+            android:hint="Enter Job Title" />
+
+        <EditText
+            android:id="@+id/etCompany"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter Company Name" />
+
+        <Spinner
+            android:id="@+id/spExperienceDuration"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <RadioGroup
+            android:id="@+id/rgEmploymentType"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/rbFullTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Full-time" />
+
+            <RadioButton
+                android:id="@+id/rbPartTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Part-time" />
+
+            <RadioButton
+                android:id="@+id/rbInternship"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Internship" />
+        </RadioGroup>
 
         <Button
             android:id="@+id/btnSave"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Save"/>
+            android:text="Save" />
 
         <Button
             android:id="@+id/btnDiscard"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Discard"/>
+            android:text="Discard" />
     </LinearLayout>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

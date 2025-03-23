@@ -1,38 +1,114 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ReferencesActivity">
+    android:padding="16dp"
+    android:orientation="vertical"
+    android:background="@android:color/white">
 
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    <!-- Referee Name -->
+    <EditText
+        android:id="@+id/etRefssereeName"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:padding="16dp">
+        android:layout_height="wrap_content"
+        android:hint="Referee Name"
+        android:inputType="textPersonName"
+        android:background="@drawable/input_background"
+        android:padding="12dp"
+        android:textSize="16sp"
+        android:elevation="4dp"
+        android:layout_marginBottom="8dp"/>
 
-        <EditText
-            android:id="@+id/etReferences"
-            android:layout_width="match_parent"
+    <!-- Referee Contact -->
+    <EditText
+        android:id="@+id/etRefereeContact"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Referee Contact"
+        android:inputType="phone"
+        android:background="@drawable/input_background"
+        android:padding="12dp"
+        android:textSize="16sp"
+        android:elevation="4dp"
+        android:layout_marginBottom="8dp"/>
+
+    <!-- Reference Type Dropdown -->
+    <Spinner
+        android:id="@+id/spReferenceType"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/input_background"
+        android:padding="8dp"
+        android:elevation="4dp"
+        android:layout_marginBottom="8dp"/>
+
+    <!-- Availability Label -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Availability:"
+        android:textStyle="bold"
+        android:textSize="16sp"
+        android:layout_marginBottom="4dp"/>
+
+    <!-- Availability Options -->
+    <RadioGroup
+        android:id="@+id/rgAvailability"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/rbAvailable"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:hint="Enter references"
-            android:inputType="textMultiLine"
-            android:minHeight="100dp"/>
+            android:text="Available"
+            android:textSize="14sp"
+            android:paddingEnd="16dp"/>
 
-        <Button
-            android:id="@+id/btnSave"
-            android:layout_width="match_parent"
+        <RadioButton
+            android:id="@+id/rbNotAvailable"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Save"/>
+            android:text="Not Available"
+            android:textSize="14sp"/>
+    </RadioGroup>
 
-        <Button
-            android:id="@+id/btnDiscard"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Discard"/>
-    </LinearLayout>
+    <!-- Reference Details -->
+    <EditText
+        android:id="@+id/etReferences"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Reference Details"
+        android:inputType="textMultiLine"
+        android:background="@drawable/input_background"
+        android:padding="12dp"
+        android:textSize="16sp"
+        android:elevation="4dp"
+        android:minHeight="100dp"
+        android:layout_marginBottom="16dp"/>
 
+    <!-- Save Button -->
+    <Button
+        android:id="@+id/btnSave"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Save"
+        android:textSize="16sp"
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        android:textColor="@android:color/white"
+        android:padding="12dp"
+        android:layout_marginBottom="8dp"/>
+
+    <!-- Discard Button -->
+    <Button
+        android:id="@+id/btnDiscard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Discard"
+        android:textSize="16sp"
+        android:backgroundTint="@color/red"
+        android:textColor="@android:color/white"
+        android:padding="12dp"/>
+
+</LinearLayout>
